@@ -72,6 +72,39 @@ footer{padding:35px 0 100px;border-top:1px solid #24314a;color:#98a7c3;font-size
   footer{padding-bottom:35px}
 }
 
+
+/* Motion system: subtle, purposeful, and respectful of reduced-motion settings */
+@keyframes heroGlow { 0%,100%{opacity:.35;transform:translate3d(0,0,0) scale(1)} 50%{opacity:.72;transform:translate3d(-10px,8px,0) scale(1.04)} }
+@keyframes floatSoft { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-9px)} }
+@keyframes pillDrift { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-5px) rotate(-.5deg)} }
+@keyframes shinePass { 0%{background-position:180% 0} 100%{background-position:-180% 0} }
+@keyframes drawChart { from{stroke-dashoffset:340} to{stroke-dashoffset:0} }
+@keyframes revealUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+.heroVisual{isolation:isolate}
+.heroVisual:before{content:"";position:absolute;z-index:-1;inset:-7%;border-radius:40%;background:radial-gradient(ellipse,#1766cf66,transparent 67%);filter:blur(20px);animation:heroGlow 7s ease-in-out infinite}
+.heroPhoto{animation:heroArrive .9s cubic-bezier(.2,.75,.25,1) both;transition:transform .7s ease,filter .7s ease}
+@keyframes heroArrive{from{opacity:.45;transform:scale(1.035) translateY(12px);filter:saturate(.7)}to{opacity:1;transform:scale(1) translateY(0);filter:saturate(1)}}
+.heroVisual:hover .heroPhoto{transform:scale(1.018)}
+.float-card{animation:floatSoft 5.5s ease-in-out infinite}
+.mini-pill{animation:pillDrift 6.5s ease-in-out infinite}
+.btn:not(.outline){background-size:200% 100%;background-image:linear-gradient(105deg,var(--blue),var(--cyan),var(--blue));animation:shinePass 8s linear infinite}
+.visualCard,.card,.priceCard,.stepNo,.feature{will-change:transform}
+.visualCard{transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.visualCard:hover{transform:translateY(-7px);border-color:#5ee7df99;box-shadow:0 18px 42px #0004}
+.mockBook{animation:floatSoft 6s ease-in-out infinite}
+.mockPage{animation:floatSoft 7s ease-in-out infinite;animation-delay:-1.4s}
+.mockDashboard{transition:transform .4s,border-color .4s}
+.visualCard:hover .mockDashboard{transform:translateY(-3px);border-color:#5ee7df}
+.chartLine{stroke-dasharray:340;stroke-dashoffset:340;animation:drawChart 2.4s cubic-bezier(.3,.7,.2,1) .3s forwards}
+.reveal-ready .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.reveal-ready .reveal.is-visible{opacity:1;transform:translateY(0)}
+.reveal-ready .reveal[data-delay="1"]{transition-delay:.1s}
+.reveal-ready .reveal[data-delay="2"]{transition-delay:.2s}
+.reveal-ready .reveal[data-delay="3"]{transition-delay:.3s}
+section[id],.trust{scroll-margin-top:90px}
+@media(max-width:850px){.heroVisual:before{inset:-3%;filter:blur(15px)}.heroVisual:hover .heroPhoto{transform:none}.visualCard:hover{transform:translateY(-3px)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
+
 </style>
 </head>
 <body>
@@ -142,8 +175,28 @@ footer{padding:35px 0 100px;border-top:1px solid #24314a;color:#98a7c3;font-size
 <footer><div class="wrap foot"><a class="brand" href="#"><b>YUOSANT</b> DIGITAL HACKS</a><span>Belajar. Bangun. Uji. Bertumbuh.</span><span>© 2026 Yuosant Digital Hacks</span></div></footer>
 <div class="stickyCta"><a class="btn" href="#harga">Lihat Paket & Harga ↑</a></div>
 <script>
-/* Ganti string kosong dengan URL checkout Scalev resmi sebelum menerima pembelian. */
+/* Checkout Scalev: pasang URL resmi per paket sebelum menerima pembelian. */
 const SCALEV_CHECKOUTS={starter:"",ultimate:"",premium:""};
 document.querySelectorAll(".checkout").forEach(btn=>{btn.addEventListener("click",e=>{const url=SCALEV_CHECKOUTS[btn.dataset.package];if(url){e.preventDefault();window.location.href=url;}else{e.preventDefault();alert("Tautan checkout Scalev untuk paket ini belum dipasang. Tambahkan URL checkout resmi sebelum website menerima pembelian.");}})});
+
+/* Progressive reveal: animation starts as sections enter the viewport. */
+document.documentElement.classList.add("reveal-ready");
+const revealTargets=document.querySelectorAll(".sectionHead,.visualCard,.card,.priceCard,.finlab,.photoPanel,.cta,.faq details,.trustrow > span");
+revealTargets.forEach((el,i)=>{el.classList.add("reveal");el.dataset.delay=String(i%4);});
+if("IntersectionObserver" in window){
+ const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.classList.add("is-visible");revealObserver.unobserve(entry.target);}
+ }),{threshold:.12,rootMargin:"0px 0px -35px 0px"});
+ revealTargets.forEach(el=>revealObserver.observe(el));
+}else{revealTargets.forEach(el=>el.classList.add("is-visible"));}
+/* Add a soft active state to navigation links while scrolling. */
+const navAnchors=[...document.querySelectorAll(".navlinks a")];
+const observedSections=navAnchors.map(a=>document.querySelector(a.getAttribute("href"))).filter(Boolean);
+if("IntersectionObserver" in window){
+ const navObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){navAnchors.forEach(a=>a.style.color=a.getAttribute("href")==="#"+entry.target.id?"var(--cyan)":"");}
+ }),{rootMargin:"-25% 0px -65% 0px"});
+ observedSections.forEach(s=>navObserver.observe(s));
+}
 </script>
 </body></html>
