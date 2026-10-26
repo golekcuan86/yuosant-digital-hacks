@@ -1,18 +1,16 @@
-# Yuosant Digital Hacks - Landing Page
+# Yuosant Digital Hacks Landing Page v2
 
-Static responsive landing page, Indonesian language.
+Paket ini berisi landing page yang diperbarui dengan foto tim, tata letak responsif, bagian FinLab, paket harga, FAQ, dan CTA.
 
-## Preview locally
-Open `index.html` in a modern browser.
+## Cara memperbarui deployment Vercel yang sudah ada
+1. Ekstrak ZIP ini.
+2. Di repo GitHub `yuosant-digital-hacks`, buka `index.html` lalu klik ikon pensil (Edit this file).
+3. Ganti seluruh isi `index.html` dengan isi file `index.html` dari paket ini, lalu commit perubahan ke branch `main`.
+4. Unggah file `team-workspace.png` ke root repo yang sama. Gunakan **Add file → Upload files**.
+5. Vercel akan melakukan deployment otomatis setelah commit/push. Tunggu status deployment menjadi Ready lalu refresh situs.
 
-## Before publishing
-1. Add the official Scalev checkout URLs in `index.html` inside `SCALEV_CHECKOUTS`:
-   - `starter`
-   - `ultimate`
-   - `premium`
-2. Verify the exact contents of each package and edit package bullets to match the deliverables.
-3. Verify which Yuosant FinLab tools are currently available and edit the list if needed.
-4. Replace illustrative dashboard artwork with real product previews/screenshots where appropriate and where you have usage rights.
+Alternatif: unggah kedua file (`index.html` dan `team-workspace.png`) melalui **Add file → Upload files** di GitHub. Untuk mengganti `index.html`, hapus/replace isi file yang lama dengan versi baru terlebih dahulu.
 
-## Deployment
-This is a static site and can be deployed to Vercel, Netlify, or another static host. It is not deployed by this package.
+## Penting sebelum jualan
+Di bagian paling bawah `index.html`, isi `SCALEV_CHECKOUTS` dengan URL checkout Scalev resmi untuk Starter, Ultimate, dan Premium. Tautan kosong hanya menampilkan pemberitahuan, tidak melakukan pembayaran.
+Pastikan isi paket, bonus, dan akses yang dijanjikan benar-benar tersedia sebelum publikasi.
