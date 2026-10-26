@@ -26,6 +26,52 @@ section{padding:86px 0}.sectionHead{text-align:center;max-width:730px;margin:0 a
 footer{padding:35px 0 100px;border-top:1px solid #24314a;color:#98a7c3;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.stickyCta{display:none}
 @media(max-width:850px){.navlinks{display:none}.menu{display:block}.nav .btn{padding:11px 16px;font-size:13px}.hero{grid-template-columns:1fr;padding-top:48px;gap:28px;min-height:0}.heroCopy{max-width:680px}.heroPhoto{aspect-ratio:1.15;object-position:center 42%}.float-card{left:12px;bottom:14px}.mini-pill{right:10px}.grid3,.pricing{grid-template-columns:1fr}.split,.finlab{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.cta{display:block}.cta .btn{margin-top:22px}section{padding:65px 0}}
 @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:68px}.brand{font-size:15px}h1{font-size:43px;letter-spacing:-2px}.lead{font-size:16px}.hero{padding:38px 0 48px}.heroPhoto{aspect-ratio:.94}.float-card{max-width:240px;padding:12px 14px}.float-card strong{font-size:15px}.mini-pill{font-size:11px;padding:9px 10px}.card,.priceCard{padding:23px}.finlab{padding:22px}.featureGrid{grid-template-columns:1fr 1fr}.cta{padding:27px}.stickyCta{position:fixed;z-index:25;display:block;bottom:10px;left:12px;right:12px}.stickyCta a{width:100%;box-shadow:0 8px 30px #0008}footer{padding-bottom:90px}}
+
+/* Responsive repair: keep product previews readable on phones */
+.visualShowcase{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.visualCard{min-width:0}
+.visualArt{min-width:0;overflow:hidden}
+.visualBody{overflow-wrap:break-word}
+@media(max-width:850px){
+  .visualShowcase{grid-template-columns:1fr;gap:16px}
+  .visualCard{display:grid;grid-template-columns:minmax(120px,.78fr) minmax(0,1.22fr);align-items:stretch}
+  .visualArt{height:auto;min-height:190px;padding:14px}
+  .visualBody{padding:20px;align-self:center}
+  .visualBody h3{font-size:19px}
+  .visualBody p{font-size:14px;line-height:1.6}
+  .mockBook{width:92px;height:126px;padding:10px;font-size:14px}
+  .mockBook b{font-size:24px}
+  .mockStack{gap:7px;transform:scale(.9)}
+  .mockPage{width:83px;height:120px;padding:9px}
+  .mockDashboard{padding:9px}
+  .dashMetric{font-size:15px}
+  .chart{height:54px}
+  .dashChips span{font-size:7px;padding:4px}
+}
+@media(max-width:480px){
+  .heroPhoto{aspect-ratio:1.28;object-fit:cover;object-position:center 43%}
+  .heroVisual{margin-top:2px}
+  .mini-pill{top:10px;right:10px;font-size:10px;padding:8px 10px;max-width:72%}
+  .float-card{left:10px;bottom:10px;max-width:225px;padding:10px 12px}
+  .float-card strong{font-size:14px}
+  .float-card span{font-size:12px}
+  .visualShowcase{grid-template-columns:1fr}
+  .visualCard{grid-template-columns:minmax(105px,.72fr) minmax(0,1.28fr);border-radius:18px}
+  .visualArt{min-height:168px;padding:8px}
+  .visualBody{padding:14px}
+  .visualBody h3{font-size:16px;line-height:1.35;margin-bottom:7px}
+  .visualBody p{font-size:12px;line-height:1.5}
+  .mockStack{transform:scale(.78)}
+  .mockBook{width:80px;height:112px}
+  .mockPage{width:75px;height:108px}
+  .mockDashboard{padding:7px}
+  .dashTop{font-size:7px}
+  .dashMetric{font-size:13px}
+  .dashChips{flex-wrap:wrap}
+  .stickyCta{display:none}
+  footer{padding-bottom:35px}
+}
+
 </style>
 </head>
 <body>
