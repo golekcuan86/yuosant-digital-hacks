@@ -101,6 +101,36 @@ footer{padding:35px 0 100px;border-top:1px solid #24314a;color:#98a7c3;font-size
 .reveal-ready .reveal[data-delay="1"]{transition-delay:.1s}
 .reveal-ready .reveal[data-delay="2"]{transition-delay:.2s}
 .reveal-ready .reveal[data-delay="3"]{transition-delay:.3s}
+
+/* Product showcase: subtle motion that makes the mockups feel tangible, not noisy. */
+.visualArt{position:relative;overflow:hidden;isolation:isolate}
+.visualArt:before{content:"";position:absolute;inset:-35% -15%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse at 35% 40%,#2477db55,transparent 52%);animation:artGlow 8s ease-in-out infinite alternate}
+.visualArt:after{content:"";position:absolute;left:12%;right:12%;bottom:14%;height:1px;pointer-events:none;background:linear-gradient(90deg,transparent,#5ee7df88,transparent);transform-origin:center;animation:scanLine 5s ease-in-out infinite}
+.visualCard:nth-child(1) .mockBook{animation:bookFloat 5.8s ease-in-out infinite;transform-origin:bottom center}
+.visualCard:nth-child(1) .mockPage{animation:pageFloat 6.4s ease-in-out infinite;animation-delay:-1.8s}
+.visualCard:nth-child(2) .mockPage:first-child{animation:planTilt 7s ease-in-out infinite;transform-origin:bottom center}
+.visualCard:nth-child(2) .mockPage:last-child{animation:planTilt 7s ease-in-out infinite reverse;transform-origin:bottom center}
+.visualCard:nth-child(3) .mockDashboard{animation:dashboardLift 6s ease-in-out infinite}
+.visualCard:nth-child(3) .chartLine{animation:chartLoop 5.2s ease-in-out infinite alternate;stroke-dasharray:340;stroke-dashoffset:0}
+.visualCard .visualBody h3{transition:color .3s ease}
+.visualCard:hover .visualBody h3{color:var(--cyan)}
+.visualCard .visualBody p{max-width:36ch}
+@keyframes artGlow{0%{transform:translate3d(-4%,0,0) scale(.94);opacity:.45}100%{transform:translate3d(5%,3%,0) scale(1.1);opacity:1}}
+@keyframes scanLine{0%,100%{opacity:.15;transform:scaleX(.35)}50%{opacity:.9;transform:scaleX(1)}}
+@keyframes bookFloat{0%,100%{transform:translateY(0) rotate(-1deg)}50%{transform:translateY(-8px) rotate(1deg)}}
+@keyframes pageFloat{0%,100%{transform:translateY(0) rotate(1deg)}50%{transform:translateY(-11px) rotate(-1deg)}}
+@keyframes planTilt{0%,100%{translate:0 0;rotate:0deg}50%{translate:0 -7px;rotate:1.5deg}}
+@keyframes dashboardLift{0%,100%{transform:translateY(0);box-shadow:0 12px 28px #0002}50%{transform:translateY(-6px);box-shadow:0 22px 38px #0005}}
+@keyframes chartLoop{0%{stroke-dashoffset:90;opacity:.65}100%{stroke-dashoffset:0;opacity:1}}
+@media(max-width:850px){
+ .visualArt:after{left:8%;right:8%;bottom:10%}
+ .visualCard:nth-child(2) .mockPage:first-child{animation-duration:8s}
+ .visualCard:nth-child(2) .mockPage:last-child{animation-duration:8s}
+}
+@media(prefers-reduced-motion:reduce){
+ .visualArt:before,.visualArt:after,.visualCard .mockBook,.visualCard .mockPage,.visualCard .mockDashboard,.visualCard .chartLine{animation:none!important}
+}
+
 section[id],.trust{scroll-margin-top:90px}
 @media(max-width:850px){.heroVisual:before{inset:-3%;filter:blur(15px)}.heroVisual:hover .heroPhoto{transform:none}.visualCard:hover{transform:translateY(-3px)}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.reveal-ready .reveal{opacity:1;transform:none}}
