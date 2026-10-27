@@ -234,6 +234,20 @@ section[id],.trust{scroll-margin-top:90px}
 .stepsImageWrap{display:flex;justify-content:center;width:100%;}
 .stepsImage{display:block;width:100%;max-width:614px;height:auto;object-fit:contain;border:1px solid #2a3858;border-radius:20px;box-shadow:0 22px 60px #0005;}
 @media(max-width:480px){.stepsImage{border-radius:14px;}}
+
+/* Full-bleed hero artwork: blends into the page instead of appearing as a card. */
+.heroArtwork{position:relative;width:100%;overflow:hidden;background:var(--bg);margin:0;padding:0;isolation:isolate}
+.heroArtworkImage{display:block;width:100%;height:auto;object-fit:contain;border:0;border-radius:0;box-shadow:none;animation:heroArrive .8s ease both}
+.heroArtwork:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#070b18 0%,#070b1808 22%,transparent 52%),linear-gradient(0deg,#070b18 0%,transparent 15%);z-index:1}
+.heroMobileCopy{display:none}
+@media(max-width:650px){
+  .heroArtworkImage{display:none}
+  .heroArtwork:after{display:none}
+  .heroArtwork{padding:34px 0 42px;background:radial-gradient(ellipse at 90% 30%,#10295a 0,transparent 45%),var(--bg)}
+  .heroMobileCopy{display:block}
+  .heroMobileCopy h1{font:800 clamp(38px,10vw,46px)/1.08 Manrope,sans-serif;letter-spacing:-2px;margin:22px 0}
+  .heroMobileCopy .lead{font-size:16px;line-height:1.75}
+}
 </style>
 </head>
 <body>
@@ -243,21 +257,15 @@ section[id],.trust{scroll-margin-top:90px}
 <a class="btn" href="#harga">Pilih Paket ↗</a>
 </div></header>
 <main>
-<div class="hero heroEditorial">
-<div class="heroCopy">
-<span class="eyebrow"><i class="dot"></i> Digital resources + business hacks</span>
-<h1>Ingin Mulai Bisnis Digital, <span class="gradient">Tapi Bingung Mulai dari Mana?</span></h1>
-<p class="lead">Punya ide, tetapi belum tahu langkah pertama? Kamu tidak harus mencari semua jawabannya sendirian. Temukan panduan, materi, dan tools praktis untuk mulai belajar, mencoba, dan membangun langkah digitalmu dengan lebih terarah.</p>
-<div class="heroProblem"><span>KENALI MASALAHNYA</span><strong>Ide ada. Bingung mulai dari mana?</strong><p>Jangan berhenti di rencana. Mulai dari bekal yang tepat, lalu ubah ide menjadi aksi nyata.</p></div>
-<div class="actions"><a class="btn" href="#harga">Temukan Paketmu ↓</a><a class="btn outline" href="#resources">Jelajahi Isinya</a></div>
-<p class="micro">Belajar bareng. Bertumbuh bareng. Ambil langkah pertamamu dengan lebih percaya diri.</p>
-</div>
-<div class="heroVisual heroPeople">
-<img class="heroPhoto" src="team-workspace.png" alt="Tiga anak muda berkolaborasi menggunakan laptop, belajar dan mengembangkan ide digital bersama">
-<div class="mini-pill">✦ Belajar bareng, bertumbuh bareng</div>
-<div class="float-card"><strong>Mulai dari ide. Lanjut jadi aksi.</strong><span>Bekal praktis untuk belajar, berkarya, dan membangun bisnis digital.</span></div>
-</div>
-</div>
+<section class="heroArtwork" aria-label="Hero Yuosant Digital Hacks">
+  <img class="heroArtworkImage" src="yuosant-digital-hacks-hero.webp" alt="Punya ide, tetapi belum tahu langkah pertama? Temukan panduan, materi, dan tools praktis untuk mulai membangun langkah digital." fetchpriority="high" decoding="async">
+  <div class="heroMobileCopy wrap">
+    <span class="eyebrow"><i class="dot"></i> Digital resources + business hacks</span>
+    <h1>Punya ide, <span class="gradient">tetapi belum tahu langkah pertama?</span></h1>
+    <p class="lead">Kamu tidak harus mencari semua jawabannya sendirian. Temukan panduan, materi, dan tools praktis untuk mulai belajar, mencoba, dan membangun langkah digitalmu dengan lebih terarah.</p>
+    <div class="actions"><a class="btn" href="#harga">Temukan Paketmu ↓</a><a class="btn outline" href="#resources">Jelajahi Isinya</a></div>
+  </div>
+</section>
 <div class="visual-ribbon"><div class="wrap ribbon-grid">
 <div class="ribbon-item"><span class="ribbon-icon">📦</span><div><strong>Produk Siap Pakai</strong><small>Template, e-book, planner, dan aset digital</small></div></div>
 <div class="ribbon-item"><span class="ribbon-icon">🚀</span><div><strong>Bekal Mulai Jualan</strong><small>Materi belajar dan toolkit promosi</small></div></div>
