@@ -24,6 +24,12 @@ section{padding:86px 0}.sectionHead{text-align:center;max-width:730px;margin:0 a
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.stepNo{font:800 35px Manrope;color:var(--cyan);margin-bottom:12px}.faq{max-width:800px;margin:auto}.faq details{border-bottom:1px solid #2a3858;padding:19px 0}.faq summary{font-weight:800;cursor:pointer}.faq details p{color:var(--muted);margin:12px 0 0}
 .cta{border:1px solid #34527a;border-radius:28px;padding:45px;background:radial-gradient(ellipse at 100% 0,#153a70,#10182d 55%);display:flex;align-items:center;justify-content:space-between;gap:25px}.cta h2{font:800 clamp(28px,3.5vw,40px)/1.15 Manrope;margin-bottom:10px}.cta p{color:var(--muted);margin-bottom:0}
 footer{padding:35px 0 100px;border-top:1px solid #24314a;color:#98a7c3;font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.stickyCta{display:none}
+/* Promotional image above the final call-to-action */
+.ctaWithImage{display:block;padding:24px;}
+.ctaHeroImage{display:block;width:100%;max-height:470px;object-fit:cover;object-position:center;border-radius:20px;border:1px solid #344566;margin-bottom:28px;box-shadow:0 18px 50px #0005;}
+.ctaContent{display:flex;align-items:center;justify-content:space-between;gap:25px;padding:0 18px 12px;}
+@media(max-width:850px){.ctaContent{display:block;padding:0 4px 6px}.ctaContent .btn{margin-top:22px}.ctaHeroImage{max-height:none;aspect-ratio:1.43;object-fit:cover;}}
+
 @media(max-width:850px){.navlinks{display:none}.menu{display:block}.nav .btn{padding:11px 16px;font-size:13px}.hero{grid-template-columns:1fr;padding-top:48px;gap:28px;min-height:0}.heroCopy{max-width:680px}.heroPhoto{aspect-ratio:1.15;object-position:center 42%}.float-card{left:12px;bottom:14px}.mini-pill{right:10px}.grid3,.pricing{grid-template-columns:1fr}.split,.finlab{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.cta{display:block}.cta .btn{margin-top:22px}section{padding:65px 0}}
 @media(max-width:480px){.wrap{width:min(var(--max),calc(100% - 28px))}.nav{height:68px}.brand{font-size:15px}h1{font-size:43px;letter-spacing:-2px}.lead{font-size:16px}.hero{padding:38px 0 48px}.heroPhoto{aspect-ratio:.94}.float-card{max-width:240px;padding:12px 14px}.float-card strong{font-size:15px}.mini-pill{font-size:11px;padding:9px 10px}.card,.priceCard{padding:23px}.finlab{padding:22px}.featureGrid{grid-template-columns:1fr 1fr}.cta{padding:27px}.stickyCta{position:fixed;z-index:25;display:block;bottom:10px;left:12px;right:12px}.stickyCta a{width:100%;box-shadow:0 8px 30px #0008}footer{padding-bottom:90px}}
 
@@ -301,7 +307,7 @@ section[id],.trust{scroll-margin-top:90px}
 <details><summary>Apakah Yuosant FinLab menjamin profit trading?</summary><p>Tidak. FinLab adalah sarana belajar dan eksplorasi. Trading memiliki risiko, hasil tidak dijamin, dan fitur AI dapat keliru serta bukan nasihat keuangan berlisensi.</p></details>
 <details><summary>Apakah saya harus membeli Premium?</summary><p>Tidak. Pilih paket yang paling sesuai dengan kebutuhanmu. Ultimate ditujukan untuk pengguna yang juga ingin akses FinLab selama 365 hari.</p></details>
 </div></div></section>
-<section><div class="wrap"><div class="cta"><div><h2>Siap mengambil langkah digital pertamamu?</h2><p>Pilih sumber daya yang paling relevan. Mulai dari yang sederhana, lalu kembangkan.</p></div><a class="btn" href="#harga">Jelajahi Paket ↗</a></div></div></section>
+<section><div class="wrap"><div class="cta ctaWithImage"><img class="ctaHeroImage" src="produk-digital-hero.webp" alt="Promosi produk digital siap pakai untuk memulai bisnis digital"><div class="ctaContent"><div><h2>Siap mengambil langkah digital pertamamu?</h2><p>Pilih sumber daya yang paling relevan. Mulai dari yang sederhana, lalu kembangkan.</p></div><a class="btn" href="#harga">Jelajahi Paket ↗</a></div></div></div></section>
 </main>
 <footer><div class="wrap foot"><a class="brand" href="#"><b>YUOSANT</b> DIGITAL HACKS</a><span>Belajar. Bangun. Uji. Bertumbuh.</span><span>© 2026 Yuosant Digital Hacks</span></div></footer>
 <div class="stickyCta"><a class="btn" href="#harga">Lihat Paket & Harga ↑</a></div>
