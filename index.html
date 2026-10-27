@@ -241,11 +241,12 @@ section[id],.trust{scroll-margin-top:90px}
 .heroArtwork:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,#070b18 0%,#070b1808 22%,transparent 52%),linear-gradient(0deg,#070b18 0%,transparent 15%);z-index:1}
 .heroMobileCopy{display:none}
 @media(max-width:650px){
-  .heroArtworkImage{display:none}
-  .heroArtwork:after{display:none}
-  .heroArtwork{padding:34px 0 42px;background:radial-gradient(ellipse at 90% 30%,#10295a 0,transparent 45%),var(--bg)}
-  .heroMobileCopy{display:block}
-  .heroMobileCopy h1{font:800 clamp(38px,10vw,46px)/1.08 Manrope,sans-serif;letter-spacing:-2px;margin:22px 0}
+  /* Keep the uploaded artwork visible on mobile; use a seamless full-bleed image, not a card. */
+  .heroArtworkImage{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;object-position:68% center;animation:none}
+  .heroArtwork:after{display:block;background:linear-gradient(0deg,#070b18 0%,#070b1800 24%);inset:0}
+  .heroArtwork{padding:0 0 34px;background:radial-gradient(ellipse at 90% 30%,#10295a 0,transparent 45%),var(--bg)}
+  .heroMobileCopy{display:block;padding-top:20px;position:relative;z-index:2}
+  .heroMobileCopy h1{font:800 clamp(38px,10vw,46px)/1.08 Manrope,sans-serif;letter-spacing:-2px;margin:18px 0}
   .heroMobileCopy .lead{font-size:16px;line-height:1.75}
 }
 </style>
