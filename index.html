@@ -264,6 +264,18 @@ section[id],.trust{scroll-margin-top:90px}
  .heroMobileCopy .btn{padding:12px 14px;font-size:12px}
 }
 @media(prefers-reduced-motion:reduce){.heroArtworkImage{animation:none}}
+
+/* Restored team workspace section: separate from the video showcase below. */
+.teamWorkspace{padding:48px 0 58px;border-top:1px solid #26334e;background:linear-gradient(115deg,#080e1d,#0d1b37 65%,#0a1020)}
+.teamWorkspaceIntro{max-width:820px;margin:0 auto 30px;text-align:center;color:var(--muted);font-size:17px;line-height:1.8}
+.teamWorkspaceVisual{position:relative;overflow:hidden;border:1px solid #3b5278;border-radius:28px;background:#091326;box-shadow:0 22px 60px #0005}
+.teamWorkspaceVisual img{display:block;width:100%;height:auto;max-height:570px;object-fit:cover;object-position:center 42%}
+.teamWorkspaceCard{position:absolute;left:22px;bottom:22px;max-width:min(390px,58%);padding:17px 20px;border:1px solid #40577d;border-radius:20px;background:#101a30ed;backdrop-filter:blur(12px);box-shadow:0 14px 38px #0005}
+.teamWorkspaceCard strong{display:block;font:800 20px/1.35 Manrope;margin-bottom:7px}
+.teamWorkspaceCard span{display:block;color:#b7c6e1;font-size:15px;line-height:1.7}
+.teamWorkspaceTag{position:absolute;right:18px;bottom:20px;max-width:48%;padding:10px 14px;border:1px solid #40577d;border-radius:999px;background:#101a30e8;color:#dce9ff;font-size:13px;font-weight:800;text-align:center}
+@media(max-width:600px){.teamWorkspace{padding:34px 0 42px}.teamWorkspaceIntro{font-size:15px;margin-bottom:22px}.teamWorkspaceVisual{border-radius:22px}.teamWorkspaceVisual img{min-height:390px;max-height:470px;object-fit:cover;object-position:58% center}.teamWorkspaceCard{left:12px;bottom:12px;max-width:68%;padding:12px 14px;border-radius:16px}.teamWorkspaceCard strong{font-size:16px;line-height:1.35}.teamWorkspaceCard span{font-size:13px;line-height:1.6}.teamWorkspaceTag{right:10px;bottom:12px;max-width:43%;font-size:10px;padding:8px 10px}}
+@media(prefers-reduced-motion:reduce){.teamWorkspaceVisual img{animation:none}}
 </style>
 </head>
 <body>
@@ -288,6 +300,12 @@ section[id],.trust{scroll-margin-top:90px}
 <div class="ribbon-item"><span class="ribbon-icon">🎬</span><div><strong>Belajar Lewat Video</strong><small>Pelajari, praktikkan, kembangkan</small></div></div>
 <div class="ribbon-item"><span class="ribbon-icon">📈</span><div><strong>FinLab di Ultimate</strong><small>Belajar finansial dan analisis trading</small></div></div>
 </div></div>
+<section class="teamWorkspace" aria-label="Belajar dan bertumbuh bersama">
+<div class="wrap">
+<p class="teamWorkspaceIntro">Belajar bareng. Bertumbuh bareng. Ambil langkah pertamamu dengan lebih percaya diri.</p>
+<div class="teamWorkspaceVisual"><img src="team-workspace.png" alt="Tiga anak muda belajar dan bekerja bersama di depan laptop" loading="lazy" decoding="async"><div class="teamWorkspaceCard"><strong>Mulai dari ide. Lanjut jadi aksi.</strong><span>Bekal praktis untuk belajar, berkarya, dan membangun bisnis digital.</span></div><div class="teamWorkspaceTag">✦ Belajar bareng, bertumbuh bareng</div></div>
+</div>
+</section>
 <section class="nextMove" aria-labelledby="nextMoveTitle"><div class="wrap nextMoveInner">
 <div class="nextMoveCopy"><span class="eyebrow"><i class="dot"></i> Your next digital move</span><h2 id="nextMoveTitle">Satu langkah kecil bisa membuka <span class="gradient">peluang baru.</span></h2><p>Jelajahi tools, materi, dan inspirasi digital yang membantumu bergerak dari sekadar ingin menjadi mulai melakukan.</p></div>
 <div class="nextMoveVideo"><video autoplay muted loop playsinline preload="metadata" poster="team-workspace.png" aria-label="Video suasana belajar dan bekerja di ruang digital"><source src="yuosant-digital-hacks-hero-compressed.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video><div class="nextMoveCaption"><strong>⚡ Your next digital move.</strong><span>Tools praktis untuk belajar, membuat, dan mengeksplorasi.</span></div></div>
