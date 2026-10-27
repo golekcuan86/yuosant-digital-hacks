@@ -165,6 +165,34 @@ section[id],.trust{scroll-margin-top:90px}
 @media(max-width:480px){.resourceCards{gap:16px}.resourceArt{height:205px}.resourceBook{left:22%;top:34px;width:108px;height:139px}.resourceSheet{right:17%;top:53px;width:96px;height:122px}.socialMock{left:19%;top:37px;width:116px;height:147px}.postMock{right:17%;top:49px;width:112px;height:139px}.postMock strong{font-size:19px}.creatorWindow{width:86%}.resourceCopy{padding:17px 18px 20px}.resourceCopy h3{font-size:17px}}
 @media(prefers-reduced-motion:reduce){.resourceOrb,.resourceBook,.resourceSheet,.socialMock,.postMock,.creatorWindow{animation:none!important}}
 
+
+/* Editorial hero: people-first image, inspired by the warm full-bleed Choco House composition. */
+.heroEditorial{grid-template-columns:1fr;padding-top:48px;gap:30px;min-height:0}
+.heroEditorial .heroCopy{max-width:900px}
+.heroEditorial h1{max-width:850px;font-size:clamp(40px,5.6vw,68px);letter-spacing:-2.5px}
+.heroEditorial .lead{max-width:790px}
+.heroProblem{max-width:700px;border-left:3px solid var(--cyan);padding:4px 0 4px 17px;margin:22px 0 4px}
+.heroProblem>span{display:block;color:var(--cyan);font-size:10px;letter-spacing:1.5px;font-weight:900;margin-bottom:5px}
+.heroProblem strong{display:block;font:800 19px Manrope}
+.heroProblem p{margin:5px 0 0;color:#aebbd4;font-size:14px}
+.heroEditorial .heroVisual{width:100%;max-width:100%;margin-top:2px}
+.heroEditorial .heroPhoto{aspect-ratio:2.15;object-position:center 42%;border-radius:28px}
+.heroEditorial .heroVisual:after{background:linear-gradient(180deg,#07101d08 35%,#07101dcf 100%)}
+.heroEditorial .mini-pill{top:auto;right:22px;bottom:22px}
+.heroEditorial .float-card{left:22px;bottom:22px}
+.nextMove{padding:65px 0 75px;border-top:1px solid #26334e;background:linear-gradient(110deg,#0b1122,#0d1a35 58%,#0a1020)}
+.nextMoveInner{display:grid;grid-template-columns:.82fr 1.18fr;gap:38px;align-items:center}
+.nextMoveCopy h2{font:800 clamp(30px,3.6vw,44px)/1.15 Manrope;letter-spacing:-1.4px;margin:18px 0}
+.nextMoveCopy p{color:var(--muted);font-size:16px;line-height:1.8}
+.nextMoveVideo{position:relative;min-width:0;overflow:hidden;border:1px solid #3c5278;border-radius:26px;background:#070b18;box-shadow:0 22px 65px #0006}
+.nextMoveVideo video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+.nextMoveCaption{position:absolute;left:18px;bottom:18px;max-width:80%;padding:14px 17px;border:1px solid #40577d;border-radius:16px;background:#0b1427eF;backdrop-filter:blur(12px)}
+.nextMoveCaption strong,.nextMoveCaption span{display:block}
+.nextMoveCaption strong{font:800 17px Manrope}
+.nextMoveCaption span{color:#b7c6e1;font-size:13px;margin-top:3px}
+@media(max-width:850px){.heroEditorial{padding-top:38px;gap:24px}.heroEditorial .heroPhoto{aspect-ratio:1.35;object-position:center 42%}.nextMoveInner{grid-template-columns:1fr;gap:22px}.nextMove{padding:52px 0}.nextMoveCopy h2{max-width:600px}}
+@media(max-width:480px){.heroEditorial{padding-top:30px;padding-bottom:42px}.heroEditorial h1{font-size:39px;letter-spacing:-1.9px}.heroEditorial .heroPhoto{aspect-ratio:1.08;border-radius:22px}.heroEditorial .mini-pill{right:10px;bottom:10px;top:auto;max-width:76%;font-size:10px;padding:8px 10px}.heroEditorial .float-card{left:10px;bottom:10px;max-width:225px;padding:10px 12px}.heroEditorial .float-card strong{font-size:14px}.heroEditorial .float-card span{font-size:12px}.heroProblem strong{font-size:17px}.heroProblem p{font-size:13px}.nextMoveVideo{border-radius:20px}.nextMoveCaption{left:10px;bottom:10px;max-width:90%;padding:10px 12px}.nextMoveCaption strong{font-size:14px}.nextMoveCaption span{font-size:11px}}
+
 </style>
 </head>
 <body>
@@ -174,20 +202,25 @@ section[id],.trust{scroll-margin-top:90px}
 <a class="btn" href="#harga">Pilih Paket ↗</a>
 </div></header>
 <main>
-<div class="wrap hero">
+<div class="hero heroEditorial">
 <div class="heroCopy">
 <span class="eyebrow"><i class="dot"></i> Digital resources + business hacks</span>
-<h1>Mulai Bisnis Digital.<br>Punya <span class="gradient">Tools-nya.</span></h1>
-<p class="lead">Ide saja belum cukup. Temukan sumber daya digital, materi belajar, marketing kit, dan tools yang membantumu belajar sambil mulai praktik, dalam satu tempat.</p>
+<h1>Ingin Mulai Bisnis Digital, <span class="gradient">Tapi Bingung Mulai dari Mana?</span></h1>
+<p class="lead">Punya ide, tetapi belum tahu langkah pertama? Kamu tidak harus mencari semua jawabannya sendirian. Temukan panduan, materi, dan tools praktis untuk mulai belajar, mencoba, dan membangun langkah digitalmu dengan lebih terarah.</p>
+<div class="heroProblem"><span>KENALI MASALAHNYA</span><strong>Ide ada. Bingung mulai dari mana?</strong><p>Jangan berhenti di rencana. Mulai dari bekal yang tepat, lalu ubah ide menjadi aksi nyata.</p></div>
 <div class="actions"><a class="btn" href="#harga">Temukan Paketmu ↓</a><a class="btn outline" href="#resources">Jelajahi Isinya</a></div>
-<p class="micro">Belajar. Bangun sesuatu. Uji idemu. Lalu kembangkan dengan langkah yang lebih terarah.</p>
+<p class="micro">Belajar bareng. Bertumbuh bareng. Ambil langkah pertamamu dengan lebih percaya diri.</p>
 </div>
-<div class="heroVisual">
-<video class="heroPhoto" autoplay muted loop playsinline preload="none" poster="team-workspace.png" aria-label="Video latar belakang Yuosant Digital Hacks"><source src="https://raw.githubusercontent.com/golekcuan86/yuosant-digital-hacks/main/yuosant-digital-hacks-hero-compressed.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video>
+<div class="heroVisual heroPeople">
+<img class="heroPhoto" src="team-workspace.png" alt="Tiga anak muda berkolaborasi menggunakan laptop, belajar dan mengembangkan ide digital bersama">
 <div class="mini-pill">✦ Belajar bareng, bertumbuh bareng</div>
-<div class="float-card"><strong>⚡ Your next digital move.</strong><span>Tools praktis untuk belajar, membuat, dan mengeksplorasi.</span></div>
+<div class="float-card"><strong>Mulai dari ide. Lanjut jadi aksi.</strong><span>Bekal praktis untuk belajar, berkarya, dan membangun bisnis digital.</span></div>
 </div>
 </div>
+<section class="nextMove" aria-labelledby="nextMoveTitle"><div class="wrap nextMoveInner">
+<div class="nextMoveCopy"><span class="eyebrow"><i class="dot"></i> Your next digital move</span><h2 id="nextMoveTitle">Satu langkah kecil bisa membuka <span class="gradient">peluang baru.</span></h2><p>Jelajahi tools, materi, dan inspirasi digital yang membantumu bergerak dari sekadar ingin menjadi mulai melakukan.</p></div>
+<div class="nextMoveVideo"><video autoplay muted loop playsinline preload="none" poster="team-workspace.png" aria-label="Animasi sumber daya dan perangkat digital"><source src="https://raw.githubusercontent.com/golekcuan86/yuosant-digital-hacks/main/yuosant-digital-hacks-hero-compressed.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video><div class="nextMoveCaption"><strong>⚡ Your next digital move.</strong><span>Tools praktis untuk belajar, membuat, dan mengeksplorasi.</span></div></div>
+</div></section>
 <div class="trust"><div class="wrap trustrow"><span><b>01</b> Materi untuk dipelajari</span><span><b>02</b> Tools untuk mulai praktik</span><span><b>03</b> Pilihan paket sesuai kebutuhan</span><span>✓ Checkout aman melalui Scalev</span></div></div>
 <section id="resources"><div class="wrap">
 <div class="sectionHead"><span class="eyebrow">Your digital toolkit</span><h2>Bukan cuma bahan bacaan.<br><span class="gradient">Ini bekal untuk mulai.</span></h2><p>Kumpulan sumber daya yang dirancang untuk membantu proses belajar dan praktik. Pilih yang relevan dengan tujuanmu, tanpa harus mencari semuanya dari nol.</p></div>
