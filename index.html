@@ -193,6 +193,36 @@ section[id],.trust{scroll-margin-top:90px}
 @media(max-width:850px){.heroEditorial{padding-top:38px;gap:24px}.heroEditorial .heroPhoto{aspect-ratio:1.35;object-position:center 42%}.nextMoveInner{grid-template-columns:1fr;gap:22px}.nextMove{padding:52px 0}.nextMoveCopy h2{max-width:600px}}
 @media(max-width:480px){.heroEditorial{padding-top:30px;padding-bottom:42px}.heroEditorial h1{font-size:39px;letter-spacing:-1.9px}.heroEditorial .heroPhoto{aspect-ratio:1.08;border-radius:22px;object-position:68% 42%}.heroEditorial .mini-pill{right:10px;bottom:10px;top:auto;max-width:76%;font-size:10px;padding:8px 10px}.heroEditorial .float-card{left:10px;top:12px;bottom:auto;max-width:225px;padding:10px 12px;background:#101a30f5;box-shadow:0 10px 30px #0007}.heroEditorial .float-card strong{font-size:14px}.heroEditorial .float-card span{font-size:12px}.heroProblem strong{font-size:17px}.heroProblem p{font-size:13px}.nextMoveVideo{border-radius:20px}.nextMoveCaption{left:10px;bottom:10px;max-width:90%;padding:10px 12px}.nextMoveCaption strong{font-size:14px}.nextMoveCaption span{font-size:11px}}
 
+
+/* Visual lift: richer storefront details while keeping the dark Yuosant identity. */
+.visual-ribbon{position:relative;overflow:hidden;padding:22px 0;background:linear-gradient(100deg,#111c34,#172a4b 48%,#102033);border-top:1px solid #2d4266;border-bottom:1px solid #2d4266}
+.ribbon-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.ribbon-item{display:flex;align-items:center;gap:12px;padding:14px 15px;border:1px solid #3b5276;border-radius:17px;background:linear-gradient(135deg,#192947d9,#0b1427d9);box-shadow:0 12px 28px #0002}
+.ribbon-icon{flex:0 0 42px;width:42px;height:42px;display:grid;place-items:center;border-radius:13px;background:linear-gradient(145deg,#5ee7df,#60a5fa);color:#071122;font-size:21px;box-shadow:0 7px 20px #42cbd544}
+.ribbon-item:nth-child(2) .ribbon-icon{background:linear-gradient(145deg,#ffe08a,#ffad5c)}
+.ribbon-item:nth-child(3) .ribbon-icon{background:linear-gradient(145deg,#b9a0ff,#7b79f8)}
+.ribbon-item:nth-child(4) .ribbon-icon{background:linear-gradient(145deg,#82f0b2,#22c99a)}
+.ribbon-item strong{display:block;font:800 14px Manrope;line-height:1.3}
+.ribbon-item small{display:block;margin-top:3px;color:#aebdd6;font-size:11px;line-height:1.4}
+.sectionHead .eyebrow{box-shadow:0 8px 25px #0002}
+.resourceArt{background-image:radial-gradient(ellipse at 15% 10%,#35d5d033,transparent 35%),radial-gradient(ellipse at 85% 80%,#8a6df833,transparent 40%),linear-gradient(145deg,#152744,#091120)}
+.resourceArt:after{content:"";position:absolute;inset:12px;border:1px solid #ffffff0c;border-radius:15px;pointer-events:none}
+.resourceFloat{box-shadow:0 8px 25px #0005}
+.resourceKicker{display:inline-flex;align-items:center;gap:6px;color:var(--cyan);font-size:10px;font-weight:900;letter-spacing:1.3px;margin-bottom:8px}
+.priceCard{overflow:hidden}
+.priceCard:before{content:"";position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(90deg,#5ee7df,#60a5fa);opacity:.9}
+.priceCard.premium:before{background:linear-gradient(90deg,#ffe08a,#ffad5c)}
+.priceCard.ultimate:before{background:linear-gradient(90deg,#a78bfa,#60a5fa,#5ee7df)}
+.priceCard.premium:after,.priceCard.ultimate:after{position:absolute;top:16px;right:-35px;transform:rotate(35deg);width:125px;text-align:center;padding:5px 0;font-size:9px;font-weight:900;letter-spacing:.7px;color:#091225;background:linear-gradient(90deg,#ffe08a,#fff0bc)}
+.priceCard.premium:after{content:"BEST VALUE"}
+.priceCard.ultimate:after{content:"FULL ACCESS";background:linear-gradient(90deg,#b9a0ff,#6bc8ff)}
+.priceCard .price{font-size:clamp(34px,3vw,41px)}
+.priceCard li::marker{color:#5ee7df}
+.priceCard.premium li::marker{color:#ffdb82}
+.priceCard.ultimate li::marker{color:#b9a0ff}
+@media(max-width:850px){.ribbon-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.ribbon-item{padding:12px}.ribbon-item strong{font-size:13px}}
+@media(max-width:480px){.visual-ribbon{padding:14px 0}.ribbon-grid{gap:8px}.ribbon-item{align-items:flex-start;gap:9px;padding:11px 9px;border-radius:14px}.ribbon-icon{flex-basis:34px;width:34px;height:34px;font-size:17px;border-radius:11px}.ribbon-item strong{font-size:11px}.ribbon-item small{font-size:10px}.priceCard:after{display:none}}
+
 </style>
 </head>
 <body>
@@ -217,6 +247,12 @@ section[id],.trust{scroll-margin-top:90px}
 <div class="float-card"><strong>Mulai dari ide. Lanjut jadi aksi.</strong><span>Bekal praktis untuk belajar, berkarya, dan membangun bisnis digital.</span></div>
 </div>
 </div>
+<div class="visual-ribbon"><div class="wrap ribbon-grid">
+<div class="ribbon-item"><span class="ribbon-icon">📦</span><div><strong>Produk Siap Pakai</strong><small>Template, e-book, planner, dan aset digital</small></div></div>
+<div class="ribbon-item"><span class="ribbon-icon">🚀</span><div><strong>Bekal Mulai Jualan</strong><small>Materi belajar dan toolkit promosi</small></div></div>
+<div class="ribbon-item"><span class="ribbon-icon">🎬</span><div><strong>Belajar Lewat Video</strong><small>Pelajari, praktikkan, kembangkan</small></div></div>
+<div class="ribbon-item"><span class="ribbon-icon">📈</span><div><strong>FinLab di Ultimate</strong><small>Belajar finansial dan analisis trading</small></div></div>
+</div></div>
 <section class="nextMove" aria-labelledby="nextMoveTitle"><div class="wrap nextMoveInner">
 <div class="nextMoveCopy"><span class="eyebrow"><i class="dot"></i> Your next digital move</span><h2 id="nextMoveTitle">Satu langkah kecil bisa membuka <span class="gradient">peluang baru.</span></h2><p>Jelajahi tools, materi, dan inspirasi digital yang membantumu bergerak dari sekadar ingin menjadi mulai melakukan.</p></div>
 <div class="nextMoveVideo"><video autoplay muted loop playsinline preload="none" poster="team-workspace.png" aria-label="Animasi sumber daya dan perangkat digital"><source src="https://raw.githubusercontent.com/golekcuan86/yuosant-digital-hacks/main/yuosant-digital-hacks-hero-compressed.mp4" type="video/mp4">Browser Anda tidak mendukung video.</video><div class="nextMoveCaption"><strong>⚡ Your next digital move.</strong><span>Tools praktis untuk belajar, membuat, dan mengeksplorasi.</span></div></div>
