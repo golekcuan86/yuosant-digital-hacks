@@ -382,3 +382,40 @@ if("IntersectionObserver" in window){
 }
 </script>
 </body></html>
+
+/* FINAL FIX: render each supplied product banner in full, never zoom or crop it. */
+#resources .resourceCard .resourceArt{
+  position:relative!important;
+  display:block!important;
+  width:100%!important;
+  height:auto!important;
+  min-height:0!important;
+  aspect-ratio:3 / 2!important;
+  padding:0!important;
+  overflow:hidden!important;
+  background:#091326!important;
+}
+#resources .resourceCard .resourceArt > img.resourceImage{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:100%!important;
+  max-height:100%!important;
+  object-fit:contain!important;
+  object-position:center center!important;
+  transform:none!important;
+  border:0!important;
+  border-radius:0!important;
+}
+#resources .resourceCard .resourceArt > .resourceFloat{
+  z-index:2!important;
+}
+@media(max-width:850px){
+  #resources .resourceCard .resourceArt{aspect-ratio:3 / 2!important}
+}
+@media(max-width:480px){
+  #resources .resourceCard .resourceArt{aspect-ratio:3 / 2!important}
+}
+
