@@ -278,6 +278,53 @@ section[id],.trust{scroll-margin-top:90px}
 .teamWorkspaceTag{position:absolute;right:18px;bottom:20px;max-width:48%;padding:10px 14px;border:1px solid #40577d;border-radius:999px;background:#101a30e8;color:#dce9ff;font-size:13px;font-weight:800;text-align:center}
 @media(max-width:600px){.teamWorkspace{padding:34px 0 42px}.teamWorkspaceIntro{font-size:15px;margin-bottom:22px}.teamWorkspaceVisual{border-radius:22px}.teamWorkspaceVisual img{min-height:390px;max-height:470px;object-fit:cover;object-position:58% center}.teamWorkspaceCard{left:12px;top:12px;bottom:auto;max-width:68%;padding:12px 14px;border-radius:16px}.teamWorkspaceCard strong{font-size:16px;line-height:1.35}.teamWorkspaceCard span{font-size:13px;line-height:1.6}.teamWorkspaceTag{right:10px;bottom:12px;max-width:43%;font-size:10px;padding:8px 10px}}
 @media(prefers-reduced-motion:reduce){.teamWorkspaceVisual img{animation:none}}
+
+/* Correct resource artwork: show the complete original banner, preserving its own aspect ratio. */
+#resources .resourceCards .resourceArt{
+  position:relative;
+  display:block;
+  height:auto;
+  min-height:0;
+  aspect-ratio:auto;
+  padding:0;
+  overflow:hidden;
+  background:#091326;
+  line-height:0;
+}
+#resources .resourceCards .resourceArt::after{
+  content:none;
+}
+#resources .resourceCards .resourceArt > img.resourceImage{
+  position:relative;
+  inset:auto;
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:100%;
+  max-height:none;
+  aspect-ratio:auto;
+  object-fit:contain;
+  object-position:center;
+  transform:none;
+  border:0;
+  border-radius:0;
+}
+#resources .resourceCards .resourceArt > .resourceFloat{
+  position:absolute;
+  z-index:2;
+  left:16px;
+  bottom:16px;
+  top:auto;
+}
+@media(max-width:480px){
+  #resources .resourceCards .resourceArt > .resourceFloat{
+    left:12px;
+    bottom:12px;
+    font-size:11px;
+    padding:8px 11px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -317,8 +364,8 @@ section[id],.trust{scroll-margin-top:90px}
 <div class="sectionHead"><span class="eyebrow">Your digital toolkit</span><h2>Produk digital siap pakai.<br><span class="gradient">Peluang jualan lebih praktis.</span></h2><p>Jelajahi 120+ pilihan dalam katalog, termasuk template, e-book, planner, materi edukasi, dan video belajar. Koleksi produk siap jual kembali mencakup 500+ produk digital sesuai lisensi yang disediakan.</p></div>
 <div class="grid3 resourceCards">
 <article class="card resourceCard"><div class="resourceArt resourceLibrary"><img class="resourceImage" src="yuosant-digital-hacks-1.webp" alt="Digital guide untuk 500+ produk digital siap jual kembali" loading="lazy" decoding="async"><div class="resourceFloat">✦ Digital guide</div></div><div class="resourceCopy"><span class="resourceKicker">01 / LEARN & RESELL</span><h3>500+ Produk Digital Siap Jual Kembali</h3><p>Temukan e-book, template Excel, planner, worksheet, template Canva, materi edukasi, dan aset digital. Pilih untuk dijual satuan atau sebagai koleksi, sesuai lisensi produk.</p></div></article>
-<article class="card resourceCard"><div class="resourceArt resourceMarketing"><img class="resourceImage" src="yuosant-digital-hacks-2.webp" alt="Plan, create, review: marketing kit dan perencanaan konten digital" loading="lazy" decoding="async"><div class="resourceFloat">✦ Creator toolkit</div></div><div class="resourceCopy"><span class="resourceKicker">02 / PROMOTE</span><h3>Marketing Kit Siap Pakai</h3><p>Materi promosi yang disiapkan untuk membantu jualan: banner desain, copywriting, file JSON, template konten media sosial, dan aset visual sesuai paket produk.</p></div></article>
-<article class="card resourceCard"><div class="resourceArt resourceCreator"><img class="resourceImage" src="yuosant-digital-hacks-3.webp" alt="Creator toolkit untuk video belajar dan template konten" loading="lazy" decoding="async"><div class="resourceFloat">✦ Plan · Create · Review</div></div><div class="resourceCopy"><span class="resourceKicker">03 / WATCH & APPLY</span><h3>Video Belajar & Template Konten</h3><p>Pelajari online marketing, affiliate, copywriting, personal branding, landing page, lead generation, dan strategi membangun audiens. Gunakan template konten serta video/Reels untuk memulai lebih praktis.</p></div></article>
+<article class="card resourceCard"><div class="resourceArt resourceMarketing"><img class="resourceImage" src="yuosant-digital-hacks-2.webp" alt="Plan, create, review: marketing kit dan perencanaan konten digital" loading="lazy" decoding="async"><div class="resourceFloat">✦ Plan · Create · Review</div></div><div class="resourceCopy"><span class="resourceKicker">02 / PROMOTE</span><h3>Marketing Kit Siap Pakai</h3><p>Materi promosi yang disiapkan untuk membantu jualan: banner desain, copywriting, file JSON, template konten media sosial, dan aset visual sesuai paket produk.</p></div></article>
+<article class="card resourceCard"><div class="resourceArt resourceCreator"><img class="resourceImage" src="yuosant-digital-hacks-3.webp" alt="Creator toolkit untuk video belajar dan template konten" loading="lazy" decoding="async"><div class="resourceFloat">✦ Creator toolkit</div></div><div class="resourceCopy"><span class="resourceKicker">03 / WATCH & APPLY</span><h3>Video Belajar & Template Konten</h3><p>Pelajari online marketing, affiliate, copywriting, personal branding, landing page, lead generation, dan strategi membangun audiens. Gunakan template konten serta video/Reels untuk memulai lebih praktis.</p></div></article>
 </div>
 </div></section>
 <section id="preview"><div class="wrap">
@@ -382,40 +429,3 @@ if("IntersectionObserver" in window){
 }
 </script>
 </body></html>
-
-/* FINAL FIX: render each supplied product banner in full, never zoom or crop it. */
-#resources .resourceCard .resourceArt{
-  position:relative!important;
-  display:block!important;
-  width:100%!important;
-  height:auto!important;
-  min-height:0!important;
-  aspect-ratio:3 / 2!important;
-  padding:0!important;
-  overflow:hidden!important;
-  background:#091326!important;
-}
-#resources .resourceCard .resourceArt > img.resourceImage{
-  position:absolute!important;
-  inset:0!important;
-  display:block!important;
-  width:100%!important;
-  height:100%!important;
-  max-width:100%!important;
-  max-height:100%!important;
-  object-fit:contain!important;
-  object-position:center center!important;
-  transform:none!important;
-  border:0!important;
-  border-radius:0!important;
-}
-#resources .resourceCard .resourceArt > .resourceFloat{
-  z-index:2!important;
-}
-@media(max-width:850px){
-  #resources .resourceCard .resourceArt{aspect-ratio:3 / 2!important}
-}
-@media(max-width:480px){
-  #resources .resourceCard .resourceArt{aspect-ratio:3 / 2!important}
-}
-
